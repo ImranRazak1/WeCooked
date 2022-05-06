@@ -13,10 +13,11 @@ struct RecipeContentView: View {
     @StateObject var breakfastItems = BreakfastAPI()
     @StateObject var lunchItems = LunchAPI()
     @StateObject var healthyItems = HealthyAPI()
-    
+    @StateObject var dinnerItems = DinnerAPI()
+    @StateObject var amplifyItems = AmplifyAPI()
     var body: some View {
+
         NavigationView {
-            
             //Selection Menu
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -27,7 +28,7 @@ struct RecipeContentView: View {
                             } label: {
                                 VStack(alignment: .leading) {
                                     Image("navigation/\(menu.name)")
-                                        .frame(width: 103)
+                                        .frame(width: 100)
                                         .cornerRadius(10)
                                         .foregroundColor(.gray)
                                     
@@ -37,7 +38,7 @@ struct RecipeContentView: View {
                                         .fontWeight(.bold)
                                     
                                 }
-                                .padding(10)
+                                .padding(8)
                             }
                            
                         }
@@ -75,7 +76,7 @@ struct RecipeContentView: View {
                                                 .cornerRadius(8)
                                                
                                         }
-                                        
+                                        Group{
                                         Text(recipe.name)
                                             .font(.headline)
                                             .multilineTextAlignment(.leading)
@@ -83,6 +84,7 @@ struct RecipeContentView: View {
                                         Text(recipe.creator)
                                             .multilineTextAlignment(.leading)
                                             .fixedSize(horizontal: false, vertical: true)
+                                    }
                                     }
                                     .frame(width: 155)
                                     .padding(.leading, 15)
@@ -130,7 +132,7 @@ struct RecipeContentView: View {
                                                 .cornerRadius(8)
                                                
                                         }
-                                        
+                                        Group{
                                         Text(recipe.name)
                                             .font(.headline)
                                             .multilineTextAlignment(.leading)
@@ -138,6 +140,7 @@ struct RecipeContentView: View {
                                         Text(recipe.creator)
                                             .multilineTextAlignment(.leading)
                                             .fixedSize(horizontal: false, vertical: true)
+                                    }
                                     }
                                     .frame(width: 155)
                                     .padding(.leading, 15)
@@ -185,6 +188,7 @@ struct RecipeContentView: View {
                                                
                                         }
                                         
+                                        Group{
                                         Text(recipe.name)
                                             .font(.headline)
                                             .multilineTextAlignment(.leading)
@@ -192,6 +196,7 @@ struct RecipeContentView: View {
                                         Text(recipe.creator)
                                             .multilineTextAlignment(.leading)
                                             .fixedSize(horizontal: false, vertical: true)
+                                    }
                                     }
                                     .frame(width: 155)
                                     .padding(.leading, 15)
@@ -239,7 +244,7 @@ struct RecipeContentView: View {
                                                 .cornerRadius(8)
                                                
                                         }
-                                        
+                                        Group{
                                         Text(recipe.name)
                                             .font(.headline)
                                             .multilineTextAlignment(.leading)
@@ -247,6 +252,7 @@ struct RecipeContentView: View {
                                         Text(recipe.creator)
                                             .multilineTextAlignment(.leading)
                                             .fixedSize(horizontal: false, vertical: true)
+                                    }
                                     }
                                     .frame(width: 155)
                                     .padding(.leading, 15)
@@ -265,12 +271,63 @@ struct RecipeContentView: View {
                     }
                 }
                 
+                //Testing Amplify
+                
+                VStack{
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack(alignment: .top, spacing: 0){
+                            ForEach(amplifyItems.recipes) { recipe in
+                                NavigationLink(destination: RecipesLanding(recipe: recipe)){
+                                    VStack(alignment: .leading){
+                                        AsyncImage(url: URL(string: "\(recipe.imageURL)")) { image in
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 155, height: 155)
+                                                .cornerRadius(8)
+                                            
+                                        } placeholder: {
+                                            Rectangle()
+                                                .fill(Color.gray)
+                                                .frame(width: 155, height: 155)
+                                                .cornerRadius(8)
+                                               
+                                        }
+                                        Group{
+                                        Text(recipe.name)
+                                            .font(.headline)
+                                            .multilineTextAlignment(.leading)
+                                            .fixedSize(horizontal: false, vertical: true)
+                                        Text(recipe.creator)
+                                            .multilineTextAlignment(.leading)
+                                            .fixedSize(horizontal: false, vertical: true)
+                                    }
+                                    }
+                                    .frame(width: 155)
+                                    .padding(.leading, 15)
+                                    
+                                    
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                            
+                        }
+                        
+                        .task {
+                            await amplifyItems.fetchRecipes()
+                        }
+                        
+                    }
+                }
+                 
+                
                 
                 
             }
             
             .navigationTitle("WeCooked")
-            
+            .background(Color("backColor"))
+            .navigationViewStyle(.stack)
         }
         .accentColor(.black)
     }

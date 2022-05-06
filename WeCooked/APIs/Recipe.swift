@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Foundation
+import Amplify
+import AWSS3StoragePlugin
 
 struct Recipe: Identifiable, Codable {
     let id: Int
@@ -83,13 +85,16 @@ class RecipeAPI: ObservableObject {
 }
 
 
-//Vegan Recipes
-@MainActor
-class VeganAPI: ObservableObject {
+
+
+
+
+//Testing Amplify
+class AmplifyAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
-    
+
     func fetchRecipes() async {
-        guard let veganAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Vegan.json") else {
+        guard let amplifyAPI = URL(string: "\(Amplify.Storage.getURL(key: "Breakfast.json"))") else {
             
             print("Invalid URL")
             return
@@ -97,87 +102,12 @@ class VeganAPI: ObservableObject {
         }
 
           do {
-              let (data, _) = try await URLSession.shared.data(from: veganAPIURL)
+              let (data, _) = try await URLSession.shared.data(from: amplifyAPI)
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
           } catch {
               print(error)
           }
       }
-    
 }
-
-
-//Breakfast Recipes
-@MainActor
-class BreakfastAPI: ObservableObject {
-    @Published var recipes: [Recipe] = []
     
-    func fetchRecipes() async {
-        guard let veganAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Breakfast.json") else {
-            
-            print("Invalid URL")
-            return
-            
-        }
-
-          do {
-              let (data, _) = try await URLSession.shared.data(from: veganAPIURL)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
-          } catch {
-              print(error)
-          }
-      }
-    
-}
-
-
-//Lunch Recipes
-@MainActor
-class LunchAPI: ObservableObject {
-    @Published var recipes: [Recipe] = []
-    
-    func fetchRecipes() async {
-        guard let veganAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Lunch.json") else {
-            
-            print("Invalid URL")
-            return
-            
-        }
-
-          do {
-              let (data, _) = try await URLSession.shared.data(from: veganAPIURL)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
-          } catch {
-              print(error)
-          }
-      }
-    
-}
-
-
-//Healthy and Simple Recipes
-@MainActor
-class HealthyAPI: ObservableObject {
-    @Published var recipes: [Recipe] = []
-    
-    func fetchRecipes() async {
-        guard let veganAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/healthysimple.json") else {
-            
-            print("Invalid URL")
-            return
-            
-        }
-
-          do {
-              let (data, _) = try await URLSession.shared.data(from: veganAPIURL)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
-          } catch {
-              print(error)
-          }
-      }
-    
-}

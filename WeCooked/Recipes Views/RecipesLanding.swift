@@ -16,6 +16,8 @@ struct RecipesLanding: View {
         
             
         ScrollView{
+
+            
             //Recipe Details
             VStack(alignment: .leading){
                 Text(recipe.name)
@@ -28,18 +30,24 @@ struct RecipesLanding: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
+
             
             
             //Recipe Image
                 AsyncImage(url: URL(string: "\(recipe.imageURL)")) { image in
                     image
                         .resizable()
+                        .clipped()
                         .frame(height: 280)
                         .aspectRatio(contentMode: .fill)
+                        .cornerRadius(8)
                 } placeholder: {
-                    ProgressView()
+                    Rectangle()
+                        .frame(height: 280)
+                    
                 }
-            
+           
+
             
             //Recipe Instructions and Ingredients
             VStack(alignment: .leading){
@@ -91,6 +99,7 @@ struct RecipesLanding: View {
 
         }
         .navigationBarTitle("", displayMode: .inline)
+        background(Color("backColor"))
             
     }
 }

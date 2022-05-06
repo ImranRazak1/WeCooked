@@ -22,20 +22,20 @@ struct RecipeList: View {
             Image("HeaderImages/\(menu.name)")
                 .resizable()
                 .frame(height: 250)
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .listRowInsets(EdgeInsets(.zero))
                 .padding(.bottom, 10)
-                .listRowBackground(Color.white)
+                .listRowBackground(Color("backColor"))
 
             //View Discription and Title Header
             Text(menu.name)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .listRowBackground(Color.white)
+                .listRowBackground(Color("backColor"))
                 .listRowSeparator(.hidden)
             
             Text("Explore \(menu.name) recipes from creators you love.")
-                .listRowBackground(Color.white)
+                .listRowBackground(Color("backColor"))
             
             //List of Recipes
             ForEach(api.recipes) { recipe in
@@ -46,6 +46,7 @@ struct RecipeList: View {
                                 .resizable()
                                 .cornerRadius(8)
                                 .frame(width: 130, height: 81)
+                                .clipped()
                                 .aspectRatio(contentMode: .fit)
                         } placeholder: {
                             Rectangle()
@@ -64,11 +65,11 @@ struct RecipeList: View {
                 }
                 
             }
-            .listRowBackground(Color.white)
+            .listRowBackground(Color("backColor"))
             .padding(5)
             
         }
-        .listRowBackground(Color.black)
+        .listRowBackground(Color("backColor"))
         .frame( maxWidth: .infinity)
         .edgesIgnoringSafeArea(.all)
         .listStyle(GroupedListStyle())
