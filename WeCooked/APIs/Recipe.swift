@@ -7,9 +7,6 @@
 
 import SwiftUI
 import Foundation
-import Amplify
-import AWSS3StoragePlugin
-
 struct Recipe: Identifiable, Codable {
     let id: Int
     let name: String
@@ -84,30 +81,3 @@ class RecipeAPI: ObservableObject {
     }
 }
 
-
-
-
-
-
-//Testing Amplify
-class AmplifyAPI: ObservableObject {
-    @Published var recipes: [Recipe] = []
-
-    func fetchRecipes() async {
-        guard let amplifyAPI = URL(string: "\(Amplify.Storage.getURL(key: "Breakfast.json"))") else {
-            
-            print("Invalid URL")
-            return
-            
-        }
-
-          do {
-              let (data, _) = try await URLSession.shared.data(from: amplifyAPI)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
-          } catch {
-              print(error)
-          }
-      }
-}
-    

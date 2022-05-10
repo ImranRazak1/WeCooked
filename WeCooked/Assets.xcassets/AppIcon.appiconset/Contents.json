@@ -1,46 +1,49 @@
 {
   "images" : [
     {
+      "filename" : "WeCooked(40 × 40px).png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "WeCooked(60 × 60px).png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "WeCooked (58 × 58px).png",
+      "filename" : "WeCooked(58 × 58px).png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "WeCooked (87 × 87px).png",
+      "filename" : "WeCooked(60 × 60px) (87 × 87px).png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
+      "filename" : "WeCooked(60 × 60px) (87 × 87px) (80 × 80px).png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "WeCooked (120 × 120px)-1.png",
+      "filename" : "WeCooked(120 × 120px)-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "WeCooked (120 × 120px).png",
+      "filename" : "WeCooked(120 × 120px).png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "WeCooked (180 × 180px).png",
+      "filename" : "WeCooked (180 × 180px)-3.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"

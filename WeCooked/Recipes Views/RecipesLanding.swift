@@ -58,7 +58,7 @@ struct RecipesLanding: View {
                 }
                 .padding([.leading, .bottom])
                 
-                
+                //Listing Ingredients
                 ForEach(recipe.ingredients, id: \.name){ ingredient in
                     VStack {
                         HStack{
@@ -81,7 +81,7 @@ struct RecipesLanding: View {
                 .padding([.leading, .bottom])
                 
                 Spacer()
-                
+                //Listing Method
                 ForEach(recipe.methods, id: \.step){method in
                     Divider()
                     
@@ -99,7 +99,7 @@ struct RecipesLanding: View {
 
         }
         .navigationBarTitle("", displayMode: .inline)
-        background(Color("backColor"))
+        .background(Color("backColor"))
             
     }
 }
