@@ -271,10 +271,11 @@ struct RecipeContentView: View {
                     }
                 }
             }
-            
+            .background(Color("backColor"))
             .navigationTitle("WeCooked")
-           .background(Color("backColor"))
+          
         }
+      
         .accentColor(.black)
     }
     

@@ -10,6 +10,17 @@
       "StackName": "amplify-wecooked-dev-171334",
       "StackId": "arn:aws:cloudformation:eu-west-2:115123388473:stack/amplify-wecooked-dev-171334/24a1ac20-d07c-11ec-88f6-06fbef8e800e",
       "AmplifyAppId": "d2rat5yysjr9w5"
+    },
+    "categories": {
+      "auth": {
+        "wecookedaff836c7": {}
+      },
+      "storage": {
+        "wecooked34b2e311": {
+          "bucketName": "recipesstore",
+          "region": "eu-west-2"
+        }
+      }
     }
   }
 }

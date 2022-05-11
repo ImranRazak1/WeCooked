@@ -77,7 +77,7 @@ struct RecipeList: View {
         .task {
             await api.fetchRecipes(for: menu)
         }
-        
+        .background(Color("backColor"))
         
     }
 }
