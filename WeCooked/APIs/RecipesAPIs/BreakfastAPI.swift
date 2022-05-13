@@ -6,30 +6,14 @@
 //
 
 import Foundation
-import Amplify
-
 
 @MainActor
 class BreakfastAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
- 
-    let urlRecieved = ""
     
     func fetchRecipes() async {
-       
-         let sink = Amplify.Storage.getURL(key: "Breakfast.json")
-                   .resultPublisher
-                   .sink {
-                       if case let .failure(storageError) = $0 {
-                           print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
-                       }
-                   }
-                   receiveValue: { url in
-                      let urlRecieved = url
-                   }
         
-        guard let breakfastAPIURL = URL(string: urlRecieved) else {
-            
+        guard let breakfastAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Breakfast.json") else {
             print("Invalid URL")
             return
             

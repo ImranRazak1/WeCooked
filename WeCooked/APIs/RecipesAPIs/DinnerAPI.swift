@@ -23,6 +23,9 @@ class DinnerAPI: ObservableObject {
               let (data, _) = try await URLSession.shared.data(from: dinnerAPIURL)
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
+              
+              
+              
           } catch {
               print(error)
           }

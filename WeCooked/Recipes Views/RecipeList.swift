@@ -13,10 +13,10 @@ struct RecipeList: View {
     
     @StateObject var api = RecipeAPI()
     
-    
+
     var body: some View {
         
-        
+
         List {
             //HeaderImage
             Image("HeaderImages/\(menu.name)")
@@ -39,7 +39,10 @@ struct RecipeList: View {
             
             //List of Recipes
             ForEach(api.recipes) { recipe in
+  
+                
                 NavigationLink(destination: RecipesLanding(recipe: recipe)){
+                    
                     HStack{
                         AsyncImage(url: URL(string: "\(recipe.imageURL)")) { image in
                             image
@@ -67,6 +70,7 @@ struct RecipeList: View {
             }
             .listRowBackground(Color("backColor"))
             .padding(5)
+
             
         }
         .listRowBackground(Color("backColor"))

@@ -275,10 +275,10 @@ struct RecipeContentView: View {
             .navigationTitle("WeCooked")
           
         }
-      
+        .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(.black)
     }
-    
+
     
 }
 

@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B6184404282AC6FF00630B75 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = B6184402282AC6FF00630B75 /* awsconfiguration.json */; };
-		B6184406282AC7E800630B75 /* amplifyConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = B6184405282AC7E800630B75 /* amplifyConfiguration.json */; };
-		B62C7BC3282C052900A18B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C7BC2282C052900A18B74 /* AppDelegate.swift */; };
-		B63FAEE8282C06D700C10C33 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63FAEE7282C06D700C10C33 /* File.swift */; };
 		B678FF7C27D285850049919A /* WeCookedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678FF7B27D285850049919A /* WeCookedApp.swift */; };
 		B678FF8027D285850049919A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B678FF7F27D285850049919A /* Assets.xcassets */; };
 		B678FF8327D285850049919A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B678FF8227D285850049919A /* Preview Assets.xcassets */; };
@@ -26,12 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B6184402282AC6FF00630B75 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		B6184405282AC7E800630B75 /* amplifyConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = amplifyConfiguration.json; sourceTree = "<group>"; };
-		B62C7BC2282C052900A18B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B63FAEE7282C06D700C10C33 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B678FF7827D285850049919A /* WeCooked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeCooked.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B678FF7B27D285850049919A /* WeCookedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeCookedApp.swift; sourceTree = "<group>"; };
+		B678FF7B27D285850049919A /* WeCookedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeCookedApp.swift; path = WeCooked/WeCookedApp.swift; sourceTree = SOURCE_ROOT; };
 		B678FF7F27D285850049919A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B678FF8227D285850049919A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B67A05A627E384C3004A57A9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -43,7 +35,6 @@
 		B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerAPI.swift; sourceTree = "<group>"; };
 		B6B2CF57281B6B8500651B2D /* LunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchAPI.swift; sourceTree = "<group>"; };
 		B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastAPI.swift; sourceTree = "<group>"; };
-		D864A06295039A6E3E9CE635 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,21 +48,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7CA77C4326ADC144870198AD /* AmplifyConfig */ = {
-			isa = PBXGroup;
-			children = (
-				D864A06295039A6E3E9CE635 /* awsconfiguration.json */,
-			);
-			name = AmplifyConfig;
-			sourceTree = "<group>";
-		};
 		B678FF6F27D285850049919A = {
 			isa = PBXGroup;
 			children = (
-				B63FAEE7282C06D700C10C33 /* File.swift */,
 				B678FF7A27D285850049919A /* WeCooked */,
 				B678FF7927D285850049919A /* Products */,
-				7CA77C4326ADC144870198AD /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +67,6 @@
 		B678FF7A27D285850049919A /* WeCooked */ = {
 			isa = PBXGroup;
 			children = (
-				B6184402282AC6FF00630B75 /* awsconfiguration.json */,
-				B6184405282AC7E800630B75 /* amplifyConfiguration.json */,
-				B62C7BC2282C052900A18B74 /* AppDelegate.swift */,
 				B678FF7B27D285850049919A /* WeCookedApp.swift */,
 				B67A05AA27E385B4004A57A9 /* RecipeContentView.swift */,
 				B68AB47A28066D1100128E0F /* APIs */,
@@ -122,8 +100,9 @@
 				B6B2CF54281B6B3F00651B2D /* RecipesAPIs */,
 				B67A05A627E384C3004A57A9 /* Recipe.swift */,
 			);
-			path = APIs;
-			sourceTree = "<group>";
+			name = APIs;
+			path = WeCooked/APIs;
+			sourceTree = SOURCE_ROOT;
 		};
 		B6B2CF54281B6B3F00651B2D /* RecipesAPIs */ = {
 			isa = PBXGroup;
@@ -184,7 +163,6 @@
 			);
 			mainGroup = B678FF6F27D285850049919A;
 			packageReferences = (
-				B62C7BB9282C04F400A18B74 /* XCRemoteSwiftPackageReference "amplify-ios" */,
 			);
 			productRefGroup = B678FF7927D285850049919A /* Products */;
 			projectDirPath = "";
@@ -201,8 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B678FF8327D285850049919A /* Preview Assets.xcassets in Resources */,
-				B6184404282AC6FF00630B75 /* awsconfiguration.json in Resources */,
-				B6184406282AC7E800630B75 /* amplifyConfiguration.json in Resources */,
 				B678FF8027D285850049919A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,8 +190,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62C7BC3282C052900A18B74 /* AppDelegate.swift in Sources */,
-				B63FAEE8282C06D700C10C33 /* File.swift in Sources */,
 				B6B2CF5A281B6B8E00651B2D /* BreakfastAPI.swift in Sources */,
 				B67A05A727E384C3004A57A9 /* Recipe.swift in Sources */,
 				B6B2CF512818DBA800651B2D /* VeganAPI.swift in Sources */,
@@ -434,17 +408,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B62C7BB9282C04F400A18B74 /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B678FF7027D285850049919A /* Project object */;
 }

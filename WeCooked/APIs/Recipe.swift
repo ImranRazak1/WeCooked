@@ -15,9 +15,12 @@ struct Recipe: Identifiable, Codable {
     let ingredients: [Ingredient]
     let methods: [Method]
     let imageURL: URL
+    //let dateAdded: String
+    //let difficulty: String
 
+    //Add new attributes to the CodingKeys
     enum CodingKeys: String, CodingKey {
-        case id, name, creator, serves, ingredients
+        case id, name, creator, serves, ingredients//, dateAdded, difficulty
         case methods = "method"
         case imageURL = "imageurl"
     }
@@ -54,6 +57,9 @@ enum RecipeSelection: String, CaseIterable, Identifiable {
     }
 }
 
+
+
+
 //All Recipes via Selection from RecipeContentView
 @MainActor
 class RecipeAPI: ObservableObject {
@@ -61,7 +67,7 @@ class RecipeAPI: ObservableObject {
 
     //we'll use this URL as a basis for all of the different URLs
     let baseURL = "https://recipesstore.s3.eu-west-2.amazonaws.com/MENU.json"
-
+    
     func fetchRecipes(for selection: RecipeSelection) async {
 
         //create the API URL by substituting the selected menu
