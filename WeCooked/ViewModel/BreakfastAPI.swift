@@ -14,14 +14,15 @@ class BreakfastAPI: ObservableObject {
     func fetchRecipes() async {
         
         guard let breakfastAPIURL = URL(string: URLData.breakfast.rawValue) else {
-            fatalError("Missing URL")
-            
+            fatalError("Missing URL") 
         }
 
           do {
               let (data, _) = try await URLSession.shared.data(from: breakfastAPIURL)
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
+              //recipes = recipes.filter { $0.dateAdded <= Date.now }
+              
           } catch {
               print("Error decoding: ", error)
           }

@@ -11,9 +11,9 @@ import UIKit
 struct RecipeList: View {
     let menu: RecipeSelection
     
-    @StateObject var api = RecipeAPI()
+@StateObject var api = RecipeAPI()
     
-
+    
     var body: some View {
         
 
