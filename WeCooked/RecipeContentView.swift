@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RecipeContentView: View {
     
-    @StateObject var veganItems = VeganAPI()
-    @StateObject var breakfastItems = BreakfastAPI()
-    @StateObject var lunchItems = LunchAPI()
-    @StateObject var healthyItems = HealthyAPI()
-    @StateObject var dinnerItems = DinnerAPI()
+    @EnvironmentObject var veganItems: VeganAPI
+    @EnvironmentObject var breakfastItems: BreakfastAPI
+    @EnvironmentObject var lunchItems: LunchAPI
+    @EnvironmentObject var healthyItems: HealthyAPI
+    @EnvironmentObject var dinnerItems: DinnerAPI
     
     var body: some View {
 
@@ -150,13 +150,15 @@ struct RecipeContentView: View {
                             }
                             
                         }
-                        
+                       // .environmentObject(BreakfastAPI())
                         .task {
                             await breakfastItems.fetchRecipes()
                         }
-                        
+
                     }
+                  
                 }
+                
                 
                 //Explore Lunch & Dinners
                 VStack(alignment: .leading){
@@ -271,12 +273,11 @@ struct RecipeContentView: View {
                     }
                 }
             }
-            .background(Color("backColor"))
+        
             .navigationTitle("WeCooked")
           
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .accentColor(.black)
     }
 
     
@@ -285,5 +286,10 @@ struct RecipeContentView: View {
 struct RecipeContentView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeContentView()
+            .environmentObject(BreakfastAPI())
+            .environmentObject(VeganAPI())
+            .environmentObject(HealthyAPI())
+            .environmentObject(DinnerAPI())
+            .environmentObject(LunchAPI())
     }
 }

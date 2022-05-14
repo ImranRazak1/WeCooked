@@ -12,11 +12,8 @@ class HealthyAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
     
     func fetchRecipes() async {
-        guard let healthyAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Healthysimple.json") else {
-            
-            print("Invalid URL")
-            return
-            
+        guard let healthyAPIURL = URL(string: URLData.healthy.rawValue) else {
+            fatalError("Missing URL")
         }
 
           do {
@@ -24,7 +21,7 @@ class HealthyAPI: ObservableObject {
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
           } catch {
-              print(error)
+              print("Error decoding: ", error)
           }
       }
 }

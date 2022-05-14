@@ -23,19 +23,19 @@ struct RecipeList: View {
                 .resizable()
                 .frame(height: 250)
                 .aspectRatio(contentMode: .fill)
+                .listRowBackground(Color.black)
                 .listRowInsets(EdgeInsets(.zero))
                 .padding(.bottom, 10)
-                .listRowBackground(Color("backColor"))
 
             //View Discription and Title Header
             Text(menu.name)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .listRowBackground(Color("backColor"))
                 .listRowSeparator(.hidden)
+                .listRowBackground(Color.black)
             
             Text("Explore \(menu.name) recipes from creators you love.")
-                .listRowBackground(Color("backColor"))
+                .listRowBackground(Color.black)
             
             //List of Recipes
             ForEach(api.recipes) { recipe in
@@ -68,12 +68,11 @@ struct RecipeList: View {
                 }
                 
             }
-            .listRowBackground(Color("backColor"))
+            .listRowBackground(Color.black)
             .padding(5)
 
             
         }
-        .listRowBackground(Color("backColor"))
         .frame( maxWidth: .infinity)
         .edgesIgnoringSafeArea(.all)
         .listStyle(GroupedListStyle())
@@ -81,7 +80,7 @@ struct RecipeList: View {
         .task {
             await api.fetchRecipes(for: menu)
         }
-        .background(Color("backColor"))
+        .listRowBackground(Color.black)
         
     }
 }

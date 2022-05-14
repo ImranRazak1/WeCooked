@@ -60,6 +60,7 @@ enum RecipeSelection: String, CaseIterable, Identifiable {
 
 
 
+
 //All Recipes via Selection from RecipeContentView
 @MainActor
 class RecipeAPI: ObservableObject {
@@ -87,4 +88,6 @@ class RecipeAPI: ObservableObject {
         }
     }
 }
+
+
 

@@ -12,10 +12,8 @@ class DinnerAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
     
     func fetchRecipes() async {
-        guard let dinnerAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Dinner.json") else {
-            
-            print("Invalid URL")
-            return
+        guard let dinnerAPIURL = URL(string: URLData.dinner.rawValue) else {
+            fatalError("Missing URL")
             
         }
 
@@ -23,11 +21,8 @@ class DinnerAPI: ObservableObject {
               let (data, _) = try await URLSession.shared.data(from: dinnerAPIURL)
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
-              
-              
-              
           } catch {
-              print(error)
+              print("Error decoding: ", error)
           }
       }
     

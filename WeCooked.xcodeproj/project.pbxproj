@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B63FAEFB282F263800C10C33 /* URLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63FAEFA282F263800C10C33 /* URLData.swift */; };
 		B678FF7C27D285850049919A /* WeCookedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678FF7B27D285850049919A /* WeCookedApp.swift */; };
 		B678FF8027D285850049919A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B678FF7F27D285850049919A /* Assets.xcassets */; };
 		B678FF8327D285850049919A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B678FF8227D285850049919A /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B63FAEFA282F263800C10C33 /* URLData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLData.swift; sourceTree = "<group>"; };
 		B678FF7827D285850049919A /* WeCooked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeCooked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B678FF7B27D285850049919A /* WeCookedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeCookedApp.swift; path = WeCooked/WeCookedApp.swift; sourceTree = SOURCE_ROOT; };
 		B678FF7F27D285850049919A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				B6B2CF54281B6B3F00651B2D /* RecipesAPIs */,
 				B67A05A627E384C3004A57A9 /* Recipe.swift */,
+				B63FAEFA282F263800C10C33 /* URLData.swift */,
 			);
 			name = APIs;
 			path = WeCooked/APIs;
@@ -198,6 +201,7 @@
 				B678FF7C27D285850049919A /* WeCookedApp.swift in Sources */,
 				B67A05A927E3850E004A57A9 /* RecipeList.swift in Sources */,
 				B67A05AB27E385B4004A57A9 /* RecipeContentView.swift in Sources */,
+				B63FAEFB282F263800C10C33 /* URLData.swift in Sources */,
 				B6B2CF56281B6B5D00651B2D /* DinnerAPI.swift in Sources */,
 				B6B2CF58281B6B8500651B2D /* LunchAPI.swift in Sources */,
 			);
@@ -257,6 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -312,6 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -340,7 +346,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +378,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

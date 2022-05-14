@@ -13,9 +13,8 @@ class BreakfastAPI: ObservableObject {
     
     func fetchRecipes() async {
         
-        guard let breakfastAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Breakfast.json") else {
-            print("Invalid URL")
-            return
+        guard let breakfastAPIURL = URL(string: URLData.breakfast.rawValue) else {
+            fatalError("Missing URL")
             
         }
 
@@ -24,8 +23,9 @@ class BreakfastAPI: ObservableObject {
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
           } catch {
-              print(error)
+              print("Error decoding: ", error)
           }
       }
     
 }
+

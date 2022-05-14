@@ -12,11 +12,8 @@ class LunchAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
     
     func fetchRecipes() async {
-        guard let lunchAPIURL = URL(string: "https://recipesstore.s3.eu-west-2.amazonaws.com/Lunch.json") else {
-            
-            print("Invalid URL")
-            return
-            
+        guard let lunchAPIURL = URL(string: URLData.lunch.rawValue) else {
+            fatalError("Missing URL")
         }
 
           do {
@@ -24,7 +21,7 @@ class LunchAPI: ObservableObject {
               let decoder = JSONDecoder()
               recipes = try decoder.decode([Recipe].self, from: data)
           } catch {
-              print(error)
+              print("Error decoding: ", error)
           }
       }
     

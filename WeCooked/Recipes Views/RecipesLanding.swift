@@ -99,7 +99,6 @@ struct RecipesLanding: View {
 
         }
         .navigationBarTitle("", displayMode: .inline)
-        .background(Color("backColor"))
             
     }
 }
