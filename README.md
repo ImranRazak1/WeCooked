@@ -16,3 +16,4 @@ Over the coming months I intend to add the following features with more creators
 - Personalisation across the app
 - Collections
 
+The Main Branch is the released version of the app. The other branches are unreleased and are in development. 
