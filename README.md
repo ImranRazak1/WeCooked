@@ -17,3 +17,5 @@ Over the coming months I intend to add the following features with more creators
 - Collections
 
 The Main Branch is the released version of the app. The other branches are unreleased and are in development. 
+
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-05-15 at 01 19 31](https://user-images.githubusercontent.com/77019152/168455223-94487b7f-0731-4525-a05e-07bfb41fbb63.png)
