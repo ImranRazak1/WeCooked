@@ -3,6 +3,7 @@
 //  avocadotoast
 //
 //  Created by Imran razak on 17/03/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import SwiftUI

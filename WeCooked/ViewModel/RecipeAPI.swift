@@ -3,6 +3,7 @@
 //  WeCooked
 //
 //  Created by Imran razak on 14/05/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import Foundation

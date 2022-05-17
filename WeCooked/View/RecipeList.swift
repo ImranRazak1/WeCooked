@@ -3,6 +3,7 @@
 //  avocadotoast
 //
 //  Created by Imran razak on 17/03/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import SwiftUI
@@ -10,7 +11,7 @@ import UIKit
 
 struct RecipeList: View {
     let menu: RecipeSelection
-    
+    /// takes the passeed in value from the recipe selction on the home page and passes it to the list page to fetch the correct repecies.
 @StateObject var api = RecipeAPI()
     
     
