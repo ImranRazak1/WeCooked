@@ -47,4 +47,8 @@ class RecipeAPI: ObservableObject {
     func sortByDifficulty() {
         recipes.sort { $0.difficulty < $1.difficulty }
     }
+    
+    func sortByServing() {
+        recipes.sort { $0.serves < $1.serves }
+    }
 }

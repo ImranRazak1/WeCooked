@@ -47,7 +47,7 @@ struct RecipeList: View {
                 Menu{
                     Button("Creator", action: api.sortByCreator)
                     Button("Difficulty", action: api.sortByDifficulty)
-                    
+                    Button("Servings", action: api.sortByServing)
                 } label: {
                     Label("Sort", systemImage: "line.3.horizontal.decrease.circle.fill")
                 }
@@ -74,10 +74,12 @@ struct RecipeList: View {
                                 .clipped()
                                 .aspectRatio(contentMode: .fit)
                         } placeholder: {
+
                             Rectangle()
                                 .fill(Color.gray)
                                 .frame(width: 130, height: 81)
                                 .cornerRadius(8)
+                        
                             
                         }
                         
