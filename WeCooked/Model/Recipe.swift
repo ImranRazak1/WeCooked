@@ -20,7 +20,7 @@ struct Recipe: Identifiable, Codable {
     let difficulty: String
 
     //Add new attributes to the CodingKeys
-    enum CodingKeys: String, CodingKey {
+      enum CodingKeys: String, CodingKey {
         case id, name, creator, serves, ingredients, dateAdded, difficulty
         case methods = "method"
         case imageURL = "imageurl"
@@ -29,7 +29,7 @@ struct Recipe: Identifiable, Codable {
 
 struct Ingredient: Codable {
     let name: String
-    let quantity: Double
+    let quantity: Int
     let measurement: String
     
 }

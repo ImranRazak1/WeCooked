@@ -20,8 +20,8 @@ class LunchAPI: ObservableObject {
         formatter.dateFormat = "dd/MM/yyyy"
         
         do {
-            let breakfastAPIURL = URL(string: URLData.lunch.rawValue)!
-            async let items = try await URLSession.shared.decode([Recipe].self, from: breakfastAPIURL, dateDecodingStrategy: .formatted(formatter))
+            let lunchAPIURL = URL(string: URLData.lunch.rawValue)!
+            async let items = try await URLSession.shared.decode([Recipe].self, from: lunchAPIURL, dateDecodingStrategy: .formatted(formatter))
             recipes = try await items
             recipes = recipes.filter { $0.dateAdded <= Date.now }
             /// The data is then decoded and put into the recipes array for accibsle use across the app.

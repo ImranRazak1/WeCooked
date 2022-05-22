@@ -11,10 +11,15 @@ import UIKit
 
 struct RecipeList: View {
     let menu: RecipeSelection
-    /// takes the passeed in value from the recipe selction on the home page and passes it to the list page to fetch the correct repecies.
-@StateObject var api = RecipeAPI()
-    
-    
+
+    @StateObject var api = RecipeAPI()
+   /*
+    @StateObject var api: RecipeAPI
+
+    init() {
+        self._api = StateObject(wrappedValue: RecipeAPI())
+    }
+    */
     var body: some View {
         
 
@@ -23,20 +28,36 @@ struct RecipeList: View {
             Image("HeaderImages/\(menu.name)")
                 .resizable()
                 .frame(height: 250)
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .listRowBackground(Color.black)
                 .listRowInsets(EdgeInsets(.zero))
                 .padding(.bottom, 10)
 
+            
+            HStack{
             //View Discription and Title Header
             Text(menu.name)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .listRowSeparator(.hidden)
-                .listRowBackground(Color.black)
+                
+                
+                Spacer()
+            
+                Menu{
+                    Button("Creator", action: api.sortByCreator)
+                    Button("Difficulty", action: api.sortByDifficulty)
+                    
+                } label: {
+                    Label("Sort", systemImage: "line.3.horizontal.decrease.circle.fill")
+                }
+            }
+            .listRowBackground(Color.black)
             
             Text("Explore \(menu.name) recipes from creators you love.")
                 .listRowBackground(Color.black)
+           
+             
             
             //List of Recipes
             ForEach(api.recipes) { recipe in
@@ -57,6 +78,7 @@ struct RecipeList: View {
                                 .fill(Color.gray)
                                 .frame(width: 130, height: 81)
                                 .cornerRadius(8)
+                            
                         }
                         
                         
@@ -64,6 +86,8 @@ struct RecipeList: View {
                             Text(recipe.name)
                                 .font(.headline)
                             Text(recipe.creator)
+                            Text(recipe.difficulty)
+                                .font(.caption)
                         }
                     }
                 }

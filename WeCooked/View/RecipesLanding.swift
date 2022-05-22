@@ -40,7 +40,7 @@ struct RecipesLanding: View {
                         .resizable()
                         .clipped()
                         .frame(height: 280)
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(contentMode: .fit)
                         .cornerRadius(8)
                 } placeholder: {
                     Rectangle()

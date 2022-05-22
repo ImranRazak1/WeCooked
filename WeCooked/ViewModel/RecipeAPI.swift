@@ -21,21 +21,30 @@ class RecipeAPI: ObservableObject {
 
         //create the API URL by substituting the selected menu
         //into the baseURL
-        guard let apiURL = URL(string: baseURL.replacingOccurrences(of: "MENU", with: selection.menu)) else {
-            print("Invalid URL")
-            return
-        }
+
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
 
         do {
-            let (data, _) = try await URLSession.shared.data(from: apiURL)
-            let decoder = JSONDecoder()
-            recipes = try decoder.decode([Recipe].self, from: data)
+            let apiURL = URL(string: baseURL.replacingOccurrences(of: "MENU", with: selection.menu))!
+            async let items = try await URLSession.shared.decode([Recipe].self, from: apiURL, dateDecodingStrategy: .formatted(formatter))
+            recipes = try await items
             recipes = recipes.filter { $0.dateAdded <= Date.now }
         } catch {
             print(error)
         }
+        
+        
+    }
+    
+
+    
+    func sortByCreator() {
+        recipes.sort { $0.creator < $1.creator }
+    }
+
+    func sortByDifficulty() {
+        recipes.sort { $0.difficulty < $1.difficulty }
     }
 }
