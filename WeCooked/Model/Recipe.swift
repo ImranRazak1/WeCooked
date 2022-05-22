@@ -16,12 +16,12 @@ struct Recipe: Identifiable, Codable {
     let ingredients: [Ingredient]
     let methods: [Method]
     let imageURL: URL
-  //  let dateAdded: Date
-   // let difficulty: String
+    let dateAdded: Date
+    let difficulty: String
 
     //Add new attributes to the CodingKeys
     enum CodingKeys: String, CodingKey {
-        case id, name, creator, serves, ingredients//, dateAdded, difficulty
+        case id, name, creator, serves, ingredients, dateAdded, difficulty
         case methods = "method"
         case imageURL = "imageurl"
     }

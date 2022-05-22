@@ -13,17 +13,22 @@ class LunchAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
     
     func fetchRecipes() async {
-        guard let lunchAPIURL = URL(string: URLData.lunch.rawValue) else {
-            fatalError("Missing URL")
+        
+        ///Fetches new recipes
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        do {
+            let breakfastAPIURL = URL(string: URLData.lunch.rawValue)!
+            async let items = try await URLSession.shared.decode([Recipe].self, from: breakfastAPIURL, dateDecodingStrategy: .formatted(formatter))
+            recipes = try await items
+            recipes = recipes.filter { $0.dateAdded <= Date.now }
+            /// The data is then decoded and put into the recipes array for accibsle use across the app.
+        } catch {
+            print("Error decoding: ", error)
         }
-
-          do {
-              let (data, _) = try await URLSession.shared.data(from: lunchAPIURL)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
-          } catch {
-              print("Error decoding: ", error)
-          }
-      }
+    }
+    
     
 }

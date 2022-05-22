@@ -26,6 +26,7 @@
 		B6B2CF56281B6B5D00651B2D /* DinnerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */; };
 		B6B2CF58281B6B8500651B2D /* LunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2CF57281B6B8500651B2D /* LunchAPI.swift */; };
 		B6B2CF5A281B6B8E00651B2D /* BreakfastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */; };
+		B6C1779E2839C10100B0316E /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1779D2839C10100B0316E /* URLSessionExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DinnerAPI.swift; path = WeCooked/ViewModel/DinnerAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6B2CF57281B6B8500651B2D /* LunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchAPI.swift; path = WeCooked/ViewModel/LunchAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreakfastAPI.swift; path = WeCooked/ViewModel/BreakfastAPI.swift; sourceTree = SOURCE_ROOT; };
+		B6C1779D2839C10100B0316E /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */,
 				B6B2CF57281B6B8500651B2D /* LunchAPI.swift */,
 				B63FAF02282FD4EE00C10C33 /* RecipeAPI.swift */,
+				B6C1779D2839C10100B0316E /* URLSessionExtension.swift */,
 			);
 			name = ViewModel;
 			path = WeCooked/ViewModel;
@@ -236,6 +239,7 @@
 				B67A05AB27E385B4004A57A9 /* HomeContentView.swift in Sources */,
 				B63FAF0A282FD96A00C10C33 /* Breakfast.swift in Sources */,
 				B63FAEFB282F263800C10C33 /* URLData.swift in Sources */,
+				B6C1779E2839C10100B0316E /* URLSessionExtension.swift in Sources */,
 				B6B2CF56281B6B5D00651B2D /* DinnerAPI.swift in Sources */,
 				B63FAF07282FD8C800C10C33 /* TrySomethingVegan.swift in Sources */,
 				B6B2CF58281B6B8500651B2D /* LunchAPI.swift in Sources */,

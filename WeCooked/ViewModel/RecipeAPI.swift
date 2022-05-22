@@ -25,12 +25,15 @@ class RecipeAPI: ObservableObject {
             print("Invalid URL")
             return
         }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
 
         do {
             let (data, _) = try await URLSession.shared.data(from: apiURL)
             let decoder = JSONDecoder()
             recipes = try decoder.decode([Recipe].self, from: data)
-            
+            recipes = recipes.filter { $0.dateAdded <= Date.now }
         } catch {
             print(error)
         }

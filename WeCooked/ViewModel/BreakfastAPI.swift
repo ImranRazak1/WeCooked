@@ -16,21 +16,19 @@ class BreakfastAPI: ObservableObject {
         
         ///Fetches new recipes
         
-        guard let breakfastAPIURL = URL(string: URLData.breakfast.rawValue) else {
-            fatalError("Missing URL") 
-        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
         
-        /// This methof get's the API URL and stores into the constant.
-
-          do {
-              let (data, _) = try await URLSession.shared.data(from: breakfastAPIURL)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
-        /// The data is then decoded and put into the recipes array for accibsle use across the app.
-          } catch {
-              print("Error decoding: ", error)
-          }
-      }
+        do {
+            let breakfastAPIURL = URL(string: URLData.breakfast.rawValue)!
+            async let items = try await URLSession.shared.decode([Recipe].self, from: breakfastAPIURL, dateDecodingStrategy: .formatted(formatter))
+            recipes = try await items
+            recipes = recipes.filter { $0.dateAdded <= Date.now }
+            /// The data is then decoded and put into the recipes array for accibsle use across the app.
+        } catch {
+            print("Error decoding: ", error)
+        }
+    }
     
 }
 
