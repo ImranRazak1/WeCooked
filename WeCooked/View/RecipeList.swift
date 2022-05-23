@@ -11,15 +11,12 @@ import UIKit
 
 struct RecipeList: View {
     let menu: RecipeSelection
-
-    @StateObject var api = RecipeAPI()
-   /*
     @StateObject var api: RecipeAPI
 
-    init() {
+    init(menu: RecipeSelection) {
         self._api = StateObject(wrappedValue: RecipeAPI())
+        self.menu = menu
     }
-    */
     var body: some View {
         
 
@@ -108,6 +105,18 @@ struct RecipeList: View {
             await api.fetchRecipes(for: menu)
         }
         .listRowBackground(Color.black)
-        
+        .toolbar{
+            Button(action: shareButton) {
+                Image(systemName: "square.and.arrow.up")
+                    .frame(width: 40, height: 40)
+                    .background(
+                        Circle()
+                            .fill(Color.gray)
+                    )
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .shadow(radius: 10)
+            }
+        }
     }
 }

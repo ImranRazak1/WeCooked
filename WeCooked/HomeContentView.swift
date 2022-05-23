@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HomeContentView: View {
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
 
@@ -127,9 +128,17 @@ struct HomeContentView: View {
           
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        //.sheet()
     }
 
     
+}
+
+func shareButton() {
+        let url = URL(string: "https://designcode.io")
+        let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+
+        UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
 }
 
 struct RecipeContentView_Previews: PreviewProvider {
