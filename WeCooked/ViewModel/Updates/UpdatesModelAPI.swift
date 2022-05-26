@@ -6,18 +6,19 @@
 //
 
 import Foundation
+
+
 @MainActor
-class updateModelAPI: ObservableObject {
+class updateAPI: ObservableObject {
     @Published var updates: [UpdatesModel] = []
+    @Published var showSheet = true
     
     func loadData() async {
         
-        guard let url = URL(string: "") else {
-            print("Invalid URL")
-            return
-        }
-        
+        let url = URL(string: "https://updatecheck.s3.eu-west-2.amazonaws.com/updates.json")!
+
         do {
+            
             let (data, _) = try await URLSession.shared.data(from: url)
             let decoder = JSONDecoder()
             updates = try decoder.decode([UpdatesModel].self, from: data)
@@ -25,6 +26,10 @@ class updateModelAPI: ObservableObject {
             print("Invalid data")
         }
         
+    }
+    
+    func toggleSheet() {
+        showSheet.toggle()
     }
     
 }

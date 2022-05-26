@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct HomeContentView: View {
-    @Environment(\.dismiss) var dismiss
+    @StateObject var showSheet = updateAPI()
     
     var body: some View {
 
         NavigationView {
+            
             //Selection Menu
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -121,25 +122,21 @@ struct HomeContentView: View {
                 Dinner()
                         .environmentObject(DinnerAPI())
                 }
-                
-            }
-        
+               
+            
+            
             .navigationTitle("WeCooked")
-          
+
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        //.sheet()
+        .sheet(isPresented: $showSheet.showSheet) {
+            NewUpdates()
+        }
     }
 
     
 }
-
-func shareButton() {
-        let url = URL(string: "https://designcode.io")
-        let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
-
-        UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
-}
+    
 
 struct RecipeContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -149,5 +146,7 @@ struct RecipeContentView_Previews: PreviewProvider {
             .environmentObject(HealthyAPI())
             .environmentObject(DinnerAPI())
             .environmentObject(LunchAPI())
+            .environmentObject(updateAPI())
     }
+}
 }
