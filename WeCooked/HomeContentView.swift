@@ -3,15 +3,19 @@
 //  avocadotoast
 //
 //  Created by Imran razak on 17/03/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import SwiftUI
 
 struct HomeContentView: View {
+    @StateObject var showingtheSheet = updateStatus()
+    
     
     var body: some View {
 
         NavigationView {
+            
             //Selection Menu
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -40,7 +44,22 @@ struct HomeContentView: View {
                     }
                    .buttonStyle(PlainButtonStyle())
                 }
+                Group{
+                //Editor Picks section
                 
+                //Section Title
+                VStack(alignment: .leading){
+                    Text("Editor Picks")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                
+                //View
+                    TrySomethingVegan()
+                        .environmentObject(VeganAPI())
+                }
                 
                 Group{
                 //Try Something Vegan Section
@@ -119,17 +138,24 @@ struct HomeContentView: View {
                 Dinner()
                         .environmentObject(DinnerAPI())
                 }
-                
-            }
-        
+               
+            
+            
             .navigationTitle("WeCooked")
-          
+
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .sheet(isPresented: $showingtheSheet.showUpdate) {
+          NewUpdates()
+        }
+            
     }
 
     
 }
+    
+    
+    
 
 struct RecipeContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -139,5 +165,7 @@ struct RecipeContentView_Previews: PreviewProvider {
             .environmentObject(HealthyAPI())
             .environmentObject(DinnerAPI())
             .environmentObject(LunchAPI())
+            .environmentObject(updateAPI())
     }
+}
 }

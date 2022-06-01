@@ -3,6 +3,7 @@
 //  WeCooked
 //
 //  Created by Imran razak on 29/04/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import Foundation
@@ -12,14 +13,16 @@ class HealthyAPI: ObservableObject {
     @Published var recipes: [Recipe] = []
     
     func fetchRecipes() async {
-        guard let healthyAPIURL = URL(string: URLData.healthy.rawValue) else {
-            fatalError("Missing URL")
-        }
+
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
 
           do {
-              let (data, _) = try await URLSession.shared.data(from: healthyAPIURL)
-              let decoder = JSONDecoder()
-              recipes = try decoder.decode([Recipe].self, from: data)
+              let healthyAPI = URL(string: URLData.healthy.rawValue)!
+              async let items = try await URLSession.shared.decode([Recipe].self, from: healthyAPI, dateDecodingStrategy: .formatted(formatter))
+              recipes = try await items
+              recipes = recipes.filter { $0.dateAdded <= Date.now }
           } catch {
               print("Error decoding: ", error)
           }

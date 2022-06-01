@@ -1,19 +1,19 @@
 //
-//  Healthy.swift
+//  EditorsPicks.swift
 //  WeCooked
 //
-//  Created by Imran razak on 14/05/2022.
+//  Created by Imran razak on 31/05/2022.
 //
 
 import SwiftUI
 
-struct Healthy: View {
-    @EnvironmentObject var healthyItems: HealthyAPI
+struct EditorsPicks: View {
+    @EnvironmentObject var editorItems: EditorAPI
     var body: some View {
         VStack{
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(alignment: .top, spacing: 0){
-                    ForEach(healthyItems.recipes) { recipe in
+                    ForEach(editorItems.recipes) { recipe in
                         NavigationLink(destination: RecipesLanding(recipe: recipe)){
                             VStack(alignment: .leading){
                                 AsyncImage(url: URL(string: "\(recipe.imageURL)")) { image in
@@ -32,6 +32,7 @@ struct Healthy: View {
                                         .cornerRadius(8)
                                        
                                     }
+
                                        
                                 }
                                 Group{
@@ -55,17 +56,19 @@ struct Healthy: View {
                 }
                 
                 .task {
-                    await healthyItems.fetchRecipes()
+                    await editorItems.fetchRecipes()
                 }
                 
             }
         }
+
     }
 }
 
-struct Healthy_Previews: PreviewProvider {
+
+struct EditorsPicks_Previews: PreviewProvider {
     static var previews: some View {
-        Healthy()
-            .environmentObject(HealthyAPI())
+        EditorsPicks()
+            .environmentObject(EditorAPI())
     }
 }

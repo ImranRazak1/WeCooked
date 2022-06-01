@@ -3,6 +3,7 @@
 //  avocadotoast
 //
 //  Created by Imran razak on 17/03/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import SwiftUI
@@ -10,10 +11,12 @@ import UIKit
 
 struct RecipeList: View {
     let menu: RecipeSelection
-    
-@StateObject var api = RecipeAPI()
-    
-    
+    @StateObject var api: RecipeAPI
+
+    init(menu: RecipeSelection) {
+        self._api = StateObject(wrappedValue: RecipeAPI())
+        self.menu = menu
+    }
     var body: some View {
         
 
@@ -22,20 +25,37 @@ struct RecipeList: View {
             Image("HeaderImages/\(menu.name)")
                 .resizable()
                 .frame(height: 250)
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .listRowBackground(Color.black)
                 .listRowInsets(EdgeInsets(.zero))
                 .padding(.bottom, 10)
 
+            
+            HStack{
             //View Discription and Title Header
             Text(menu.name)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .listRowSeparator(.hidden)
-                .listRowBackground(Color.black)
+                
+                
+                Spacer()
+            
+                Menu{
+                    Button("Creator", action: api.sortByCreator)
+                    Button("Difficulty", action: api.sortByDifficulty)
+                    Button("Servings", action: api.sortByServing)
+                } label: {
+                    Label("Sort", systemImage: "line.3.horizontal.decrease.circle.fill")
+                }
+            }
+            .listRowBackground(Color.black)
+            .listRowSeparator(.hidden)
             
             Text("Explore \(menu.name) recipes from creators you love.")
                 .listRowBackground(Color.black)
+           
+             
             
             //List of Recipes
             ForEach(api.recipes) { recipe in
@@ -52,10 +72,13 @@ struct RecipeList: View {
                                 .clipped()
                                 .aspectRatio(contentMode: .fit)
                         } placeholder: {
+
                             Rectangle()
                                 .fill(Color.gray)
                                 .frame(width: 130, height: 81)
                                 .cornerRadius(8)
+                        
+                            
                         }
                         
                         
@@ -63,6 +86,8 @@ struct RecipeList: View {
                             Text(recipe.name)
                                 .font(.headline)
                             Text(recipe.creator)
+                            Text(recipe.difficulty)
+                                .font(.caption)
                         }
                     }
                 }
@@ -81,6 +106,8 @@ struct RecipeList: View {
             await api.fetchRecipes(for: menu)
         }
         .listRowBackground(Color.black)
-        
+        .toolbar{
+            shareSheet()
+        }
     }
 }

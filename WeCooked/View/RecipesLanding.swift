@@ -3,6 +3,7 @@
 //  avocadotoast
 //
 //  Created by Imran razak on 17/03/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import SwiftUI
@@ -39,7 +40,7 @@ struct RecipesLanding: View {
                         .resizable()
                         .clipped()
                         .frame(height: 280)
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(contentMode: .fit)
                         .cornerRadius(8)
                 } placeholder: {
                     Rectangle()

@@ -24,10 +24,14 @@ struct Lunch: View {
                                         .cornerRadius(8)
                                     
                                 } placeholder: {
+                                    ZStack{
+                                    ProgressView()
                                     Rectangle()
                                         .fill(Color.gray)
                                         .frame(width: 155, height: 155)
                                         .cornerRadius(8)
+                                       
+                                    }
                                        
                                 }
                                 

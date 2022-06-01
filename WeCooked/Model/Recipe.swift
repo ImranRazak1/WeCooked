@@ -3,6 +3,7 @@
 //  avocadotoast
 //
 //  Created by Imran razak on 17/03/2022.
+//  Copyright © 2022 Imran Razak. All rights reserved.
 //
 
 import SwiftUI
@@ -15,12 +16,12 @@ struct Recipe: Identifiable, Codable {
     let ingredients: [Ingredient]
     let methods: [Method]
     let imageURL: URL
-  //  let dateAdded: Date
-   // let difficulty: String
+    let dateAdded: Date
+    let difficulty: String
 
     //Add new attributes to the CodingKeys
-    enum CodingKeys: String, CodingKey {
-        case id, name, creator, serves, ingredients//, dateAdded, difficulty
+      enum CodingKeys: String, CodingKey {
+        case id, name, creator, serves, ingredients, dateAdded, difficulty
         case methods = "method"
         case imageURL = "imageurl"
     }
@@ -28,7 +29,7 @@ struct Recipe: Identifiable, Codable {
 
 struct Ingredient: Codable {
     let name: String
-    let quantity: Double
+    let quantity: Int
     let measurement: String
     
 }
