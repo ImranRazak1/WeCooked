@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct HomeContentView: View {
-    @StateObject var showSheet = updateAPI()
+    @StateObject var showingtheSheet = updateStatus()
+    
     
     var body: some View {
 
@@ -43,7 +44,22 @@ struct HomeContentView: View {
                     }
                    .buttonStyle(PlainButtonStyle())
                 }
+                Group{
+                //Editor Picks section
                 
+                //Section Title
+                VStack(alignment: .leading){
+                    Text("Editor Picks")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                
+                //View
+                    TrySomethingVegan()
+                        .environmentObject(VeganAPI())
+                }
                 
                 Group{
                 //Try Something Vegan Section
@@ -129,13 +145,16 @@ struct HomeContentView: View {
 
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $showSheet.showSheet) {
-            NewUpdates()
+        .sheet(isPresented: $showingtheSheet.showUpdate) {
+          NewUpdates()
         }
+            
     }
 
     
 }
+    
+    
     
 
 struct RecipeContentView_Previews: PreviewProvider {

@@ -11,6 +11,7 @@ import SwiftUI
 
 func shareButton() {
         let url = URL(string: "https://apps.apple.com/tt/app/wecooked/id1622900349")
+    
         let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
 
     UIApplication.shared.currentUIWindow()?.rootViewController!.present(activityController, animated: true, completion: nil)

@@ -11,6 +11,7 @@ struct NewUpdates: View {
     @Environment(\.dismiss) var dismiss
     
     @StateObject var updateList = updateAPI()
+    @StateObject var showingUpdate = updateStatus()
     
     var body: some View {
         
@@ -46,10 +47,11 @@ struct NewUpdates: View {
                     
                     Button(action: {
                         dismiss()
-                        updateList.toggleSheet()
+                        showingUpdate.toggleSheet()
                             
                     }, label: {
                         Text("Continue")
+                            .bold()
                             .frame(maxWidth: .infinity, alignment: .bottom)
                             .cornerRadius(15)
                             .padding()
@@ -79,5 +81,6 @@ struct NewUpdates: View {
 struct NewUpdates_Previews: PreviewProvider {
     static var previews: some View {
         NewUpdates()
+            .environmentObject(updateStatus())
     }
 }

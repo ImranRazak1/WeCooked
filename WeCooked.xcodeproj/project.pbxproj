@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B620BD30283BEC2C009A0BBB /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620BD2F283BEC2C009A0BBB /* ShareSheet.swift */; };
 		B620BD35283BEDB1009A0BBB /* shareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620BD34283BEDB1009A0BBB /* shareSheet.swift */; };
+		B620BD3D284578B7009A0BBB /* updateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B620BD3C284578B7009A0BBB /* updateStatus.swift */; };
 		B63FAEFB282F263800C10C33 /* URLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63FAEFA282F263800C10C33 /* URLData.swift */; };
 		B63FAF03282FD4EE00C10C33 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63FAF02282FD4EE00C10C33 /* RecipeAPI.swift */; };
 		B63FAF07282FD8C800C10C33 /* TrySomethingVegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63FAF06282FD8C800C10C33 /* TrySomethingVegan.swift */; };
@@ -28,6 +29,8 @@
 		B6B2CF56281B6B5D00651B2D /* DinnerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */; };
 		B6B2CF58281B6B8500651B2D /* LunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2CF57281B6B8500651B2D /* LunchAPI.swift */; };
 		B6B2CF5A281B6B8E00651B2D /* BreakfastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */; };
+		B6BDC35428459A0300A21C26 /* EditorsPicks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDC35328459A0300A21C26 /* EditorsPicks.swift */; };
+		B6BDC35628459D8300A21C26 /* EditorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDC35528459D8300A21C26 /* EditorsAPI.swift */; };
 		B6C1779E2839C10100B0316E /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1779D2839C10100B0316E /* URLSessionExtension.swift */; };
 		B6C177A1283BC48E00B0316E /* NewUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C177A0283BC48E00B0316E /* NewUpdates.swift */; };
 		B6C177A3283BD2D300B0316E /* UpdatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C177A2283BD2D300B0316E /* UpdatesModel.swift */; };
@@ -37,6 +40,7 @@
 /* Begin PBXFileReference section */
 		B620BD2F283BEC2C009A0BBB /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		B620BD34283BEDB1009A0BBB /* shareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareSheet.swift; sourceTree = "<group>"; };
+		B620BD3C284578B7009A0BBB /* updateStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateStatus.swift; sourceTree = "<group>"; };
 		B63FAEFA282F263800C10C33 /* URLData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLData.swift; path = WeCooked/Model/URLData.swift; sourceTree = SOURCE_ROOT; };
 		B63FAF02282FD4EE00C10C33 /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeAPI.swift; path = WeCooked/ViewModel/RecipeAPI.swift; sourceTree = SOURCE_ROOT; };
 		B63FAF06282FD8C800C10C33 /* TrySomethingVegan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrySomethingVegan.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DinnerAPI.swift; path = WeCooked/ViewModel/DinnerAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6B2CF57281B6B8500651B2D /* LunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchAPI.swift; path = WeCooked/ViewModel/LunchAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreakfastAPI.swift; path = WeCooked/ViewModel/BreakfastAPI.swift; sourceTree = SOURCE_ROOT; };
+		B6BDC35328459A0300A21C26 /* EditorsPicks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsPicks.swift; sourceTree = "<group>"; };
+		B6BDC35528459D8300A21C26 /* EditorsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsAPI.swift; sourceTree = "<group>"; };
 		B6C1779D2839C10100B0316E /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		B6C1779F2839C2C100B0316E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B6C177A0283BC48E00B0316E /* NewUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUpdates.swift; sourceTree = "<group>"; };
@@ -106,11 +112,13 @@
 				B6C177AD283BD46E00B0316E /* Updates */,
 				B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */,
 				B6B2CF502818DBA800651B2D /* VeganAPI.swift */,
+				B6BDC35528459D8300A21C26 /* EditorsAPI.swift */,
 				B6B2CF52281B6B2300651B2D /* HealthyAPI.swift */,
 				B6B2CF55281B6B5D00651B2D /* DinnerAPI.swift */,
 				B6B2CF57281B6B8500651B2D /* LunchAPI.swift */,
 				B63FAF02282FD4EE00C10C33 /* RecipeAPI.swift */,
 				B6C1779D2839C10100B0316E /* URLSessionExtension.swift */,
+				B620BD3C284578B7009A0BBB /* updateStatus.swift */,
 			);
 			name = ViewModel;
 			path = WeCooked/ViewModel;
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				B63FAF06282FD8C800C10C33 /* TrySomethingVegan.swift */,
+				B6BDC35328459A0300A21C26 /* EditorsPicks.swift */,
 				B63FAF09282FD96A00C10C33 /* Breakfast.swift */,
 				B63FAF0B282FDA0C00C10C33 /* Lunch.swift */,
 				B63FAF0D282FDAA400C10C33 /* Healthy.swift */,
@@ -268,16 +277,19 @@
 				B63FAF10282FDACD00C10C33 /* Dinner.swift in Sources */,
 				B6B2CF53281B6B2300651B2D /* HealthyAPI.swift in Sources */,
 				B63FAF0E282FDAA400C10C33 /* Healthy.swift in Sources */,
+				B6BDC35428459A0300A21C26 /* EditorsPicks.swift in Sources */,
 				B678FF7C27D285850049919A /* WeCookedApp.swift in Sources */,
 				B6C177A1283BC48E00B0316E /* NewUpdates.swift in Sources */,
 				B67A05A927E3850E004A57A9 /* RecipeList.swift in Sources */,
 				B67A05AB27E385B4004A57A9 /* HomeContentView.swift in Sources */,
 				B6C177AA283BD44F00B0316E /* UpdatesModelAPI.swift in Sources */,
 				B63FAF0A282FD96A00C10C33 /* Breakfast.swift in Sources */,
+				B6BDC35628459D8300A21C26 /* EditorsAPI.swift in Sources */,
 				B63FAEFB282F263800C10C33 /* URLData.swift in Sources */,
 				B620BD35283BEDB1009A0BBB /* shareSheet.swift in Sources */,
 				B6C1779E2839C10100B0316E /* URLSessionExtension.swift in Sources */,
 				B6B2CF56281B6B5D00651B2D /* DinnerAPI.swift in Sources */,
+				B620BD3D284578B7009A0BBB /* updateStatus.swift in Sources */,
 				B63FAF07282FD8C800C10C33 /* TrySomethingVegan.swift in Sources */,
 				B6B2CF58281B6B8500651B2D /* LunchAPI.swift in Sources */,
 				B620BD30283BEC2C009A0BBB /* ShareSheet.swift in Sources */,

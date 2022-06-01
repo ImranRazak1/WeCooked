@@ -14,4 +14,5 @@ enum URLData: String{
     case dinner = "https://recipesstore.s3.eu-west-2.amazonaws.com/Dinner.json"
     case vegan = "https://recipesstore.s3.eu-west-2.amazonaws.com/Vegan.json"
     case healthy =  "https://recipesstore.s3.eu-west-2.amazonaws.com/Healthy.json"
+    case editor = "https://recipesstore.s3.eu-west-2.amazonaws.com/EditorsPicks.json"
 }

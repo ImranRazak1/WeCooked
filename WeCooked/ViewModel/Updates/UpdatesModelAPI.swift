@@ -11,7 +11,6 @@ import Foundation
 @MainActor
 class updateAPI: ObservableObject {
     @Published var updates: [UpdatesModel] = []
-    @Published var showSheet = true
     
     func loadData() async {
         
@@ -22,14 +21,13 @@ class updateAPI: ObservableObject {
             let (data, _) = try await URLSession.shared.data(from: url)
             let decoder = JSONDecoder()
             updates = try decoder.decode([UpdatesModel].self, from: data)
+            
+            
         } catch {
             print("Invalid data")
         }
         
     }
     
-    func toggleSheet() {
-        showSheet.toggle()
-    }
     
 }

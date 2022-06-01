@@ -50,6 +50,7 @@ struct RecipeList: View {
                 }
             }
             .listRowBackground(Color.black)
+            .listRowSeparator(.hidden)
             
             Text("Explore \(menu.name) recipes from creators you love.")
                 .listRowBackground(Color.black)
