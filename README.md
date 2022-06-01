@@ -18,6 +18,7 @@ Over the coming months I intend to add the following features with more creators
 The Main Branch is the released version of the app. The other branches are unreleased and are in development. 
 
 -- Latest Updates ---
+
 Introducing our next update in weCooked. Now you can sort by creators, difficulty and number of servings. We have introduced editor picks that are curated every week for our users. As we continue to add new creators, recipes and improve the experience.
 
 ---
