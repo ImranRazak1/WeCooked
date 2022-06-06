@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EditorsPicks: View {
-    @EnvironmentObject var editorItems: EditorAPI
+    @EnvironmentObject var editorItems: EditorsAPI
+    
     var body: some View {
         VStack{
             ScrollView(.horizontal, showsIndicators: false){
@@ -65,10 +66,9 @@ struct EditorsPicks: View {
     }
 }
 
-
 struct EditorsPicks_Previews: PreviewProvider {
     static var previews: some View {
         EditorsPicks()
-            .environmentObject(EditorAPI())
+            .environmentObject(EditorsAPI())
     }
 }

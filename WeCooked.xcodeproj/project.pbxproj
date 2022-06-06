@@ -62,7 +62,7 @@
 		B6B2CF57281B6B8500651B2D /* LunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchAPI.swift; path = WeCooked/ViewModel/LunchAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6B2CF59281B6B8E00651B2D /* BreakfastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreakfastAPI.swift; path = WeCooked/ViewModel/BreakfastAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6BDC35328459A0300A21C26 /* EditorsPicks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsPicks.swift; sourceTree = "<group>"; };
-		B6BDC35528459D8300A21C26 /* EditorsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorsAPI.swift; sourceTree = "<group>"; };
+		B6BDC35528459D8300A21C26 /* EditorsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditorsAPI.swift; path = WeCooked/ViewModel/EditorsAPI.swift; sourceTree = SOURCE_ROOT; };
 		B6C1779D2839C10100B0316E /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		B6C1779F2839C2C100B0316E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B6C177A0283BC48E00B0316E /* NewUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUpdates.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 				B6B2CF57281B6B8500651B2D /* LunchAPI.swift */,
 				B63FAF02282FD4EE00C10C33 /* RecipeAPI.swift */,
 				B6C1779D2839C10100B0316E /* URLSessionExtension.swift */,
-				B620BD3C284578B7009A0BBB /* updateStatus.swift */,
 			);
 			name = ViewModel;
 			path = WeCooked/ViewModel;
@@ -189,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				B6C177A9283BD44F00B0316E /* UpdatesModelAPI.swift */,
+				B620BD3C284578B7009A0BBB /* updateStatus.swift */,
 			);
 			path = Updates;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Imran.avocadotoast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -472,7 +472,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Imran.avocadotoast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

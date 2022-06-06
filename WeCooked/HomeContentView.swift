@@ -44,6 +44,7 @@ struct HomeContentView: View {
                     }
                    .buttonStyle(PlainButtonStyle())
                 }
+                
                 Group{
                 //Editor Picks section
                 
@@ -57,8 +58,8 @@ struct HomeContentView: View {
                 .padding()
                 
                 //View
-                    TrySomethingVegan()
-                        .environmentObject(VeganAPI())
+                    EditorsPicks()
+                        .environmentObject(EditorsAPI())
                 }
                 
                 Group{
@@ -166,6 +167,7 @@ struct RecipeContentView_Previews: PreviewProvider {
             .environmentObject(DinnerAPI())
             .environmentObject(LunchAPI())
             .environmentObject(updateAPI())
+            .environmentObject(EditorsAPI())
     }
 }
 }

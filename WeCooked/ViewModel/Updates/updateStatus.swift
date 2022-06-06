@@ -24,7 +24,7 @@ class updateStatus: ObservableObject {
 }
 
     func checkStatus() {
-        if updated == false {
+        if updated == false && updates == true{
             showUpdate = true
             updated = true
             UserDefaults.standard.set(self.updated,forKey: "updated")
