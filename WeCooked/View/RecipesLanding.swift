@@ -75,7 +75,7 @@ struct RecipesLanding: View {
             
             VStack(alignment: .leading) {
                 HStack{
-                Text("Steps to make it happen!")
+                Text("Steps")
                     .font(.title)
                     .fontWeight(.bold)
                 }

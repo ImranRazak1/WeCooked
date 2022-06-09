@@ -9,7 +9,7 @@
 import SwiftUI
 import Foundation
 struct Recipe: Identifiable, Codable {
-    let id: Int
+    let id: UUID
     let name: String
     let creator: String
     let serves: Int
