@@ -47,7 +47,6 @@ struct RecipesLanding: View {
                         .frame(height: 280)
                     
                 }
-           
 
             
             //Recipe Instructions and Ingredients

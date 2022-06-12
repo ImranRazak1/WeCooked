@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct HomeContentView: View {
-    @StateObject var showingtheSheet = updateStatus()
     
     
     var body: some View {
@@ -44,6 +43,8 @@ struct HomeContentView: View {
                     }
                    .buttonStyle(PlainButtonStyle())
                 }
+                .padding(8)
+
                 
                 Group{
                 //Editor Picks section
@@ -55,7 +56,7 @@ struct HomeContentView: View {
                         .fontWeight(.bold)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+                .padding(.leading)
                 
                 //View
                     EditorsPicks()
@@ -146,9 +147,6 @@ struct HomeContentView: View {
 
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $showingtheSheet.showUpdate) {
-          NewUpdates()
-        }
             
     }
 
@@ -166,7 +164,6 @@ struct RecipeContentView_Previews: PreviewProvider {
             .environmentObject(HealthyAPI())
             .environmentObject(DinnerAPI())
             .environmentObject(LunchAPI())
-            .environmentObject(updateAPI())
             .environmentObject(EditorsAPI())
     }
 }

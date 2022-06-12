@@ -28,7 +28,7 @@ struct TrySomethingVegan: View {
                                     ZStack{
                                     ProgressView()
                                     Rectangle()
-                                        .fill(Color.gray)
+                                        .fill(Color(hue: 1.0, saturation: 0.0, brightness: 0.22))
                                         .frame(width: 155, height: 155)
                                         .cornerRadius(8)
                                        
@@ -41,9 +41,12 @@ struct TrySomethingVegan: View {
                                     .font(.headline)
                                     .multilineTextAlignment(.leading)
                                     .fixedSize(horizontal: false, vertical: true)
-                                Text(recipe.creator)
-                                    .multilineTextAlignment(.leading)
-                                    .fixedSize(horizontal: false, vertical: true)
+                                    Text(recipe.creator)
+                                        .foregroundColor(.secondary)
+                                        .font(.subheadline)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                        .fixedSize(horizontal: false, vertical: true)
                             }
                             }
                             .frame(width: 155)

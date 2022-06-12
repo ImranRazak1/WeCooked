@@ -25,25 +25,26 @@ struct Breakfast: View {
                                     
                                 } placeholder: {
                                     ZStack{
-                                    ProgressView()
-                                    Rectangle()
-                                        .fill(Color.gray)
-                                        .frame(width: 155, height: 155)
-                                        .cornerRadius(8)
-                                       
+                                        Rectangle()
+                                            .fill(Color(hue: 1.0, saturation: 0.0, brightness: 0.22))
+                                            .frame(width: 155, height: 155)
+                                            .cornerRadius(8)
+                                        
                                     }
-                                       
+                                    
                                 }
                                 
                                 Group{
-                                Text(recipe.name)
-                                    .font(.headline)
-                                    .multilineTextAlignment(.leading)
-                                    .fixedSize(horizontal: false, vertical: true)
-                                Text(recipe.creator)
-                                    .multilineTextAlignment(.leading)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
+                                    Text(recipe.name)
+                                        .font(.headline)
+                                        .multilineTextAlignment(.leading)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                    Text(recipe.creator)
+                                        .foregroundColor(.secondary)
+                                        .font(.subheadline)
+                                        .multilineTextAlignment(.leading)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
                             }
                             .frame(width: 155)
                             .padding(.leading, 15)
